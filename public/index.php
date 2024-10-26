@@ -6,6 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Hamburgueria</h1>
+        <nav>
+            <a href="./login.php">faça login</a>
+        </nav>
+    </header>
 </body>
 </html>

@@ -21,7 +21,7 @@ class Login{
             $_SESSION['logado'] = true;
             $_SESSION['login_erro'] = '';
             $_SESSION['email'];
-            header('Location: ../views/home.html');
+            header('Location: ../views/home.php');
             exit();
         }
         $_SESSION['login_erro'] = 'Usuário ou senha inválidos';
