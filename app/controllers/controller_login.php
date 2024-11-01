@@ -12,14 +12,30 @@ class ControllerLogin{
         return htmlspecialchars(strip_tags(trim($data)));
     }
     public function login(){
-        $loginModel = new Login();
-        $loginModel->login($this->email, $this->senha);
+        $login = new Login();
+        $usuario = $login->login($this->email, $this->senha);
+        if ($usuario) {
+            $_SESSION['logado'] = true;
+            $_SESSION['login_erro'] = '';
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['tipo_usuario'] = $usuario['tipo'];
+            if ($usuario['tipo'] == 'cliente') {
+                header('Location: ../views/cliente/home.php');
+            } else if ($usuario['tipo'] == 'administrador') {
+                header('Location: ../views/adm/home.php');
+            }
+            exit();
+        } else {
+            $_SESSION['login_erro'] = 'Usuário ou senha inválidos';
+            header("Location: ../../public/index.html");
+            exit();
+        }
     }
 
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $email = $_POST['usuario'] ?? '';
+    $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
     if (!empty($email) && !empty($senha)) {

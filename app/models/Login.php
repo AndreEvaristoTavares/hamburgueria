@@ -18,16 +18,10 @@ class Login{
         $resultado = $query->get_result();
     
         if ($resultado->num_rows > 0) {
-            $_SESSION['logado'] = true;
-            $_SESSION['login_erro'] = '';
-            $_SESSION['email'];
-            header('Location: ../views/home.php');
-            exit();
+            $usuario = $resultado->fetch_assoc();
+            return $usuario;
         }
-        $_SESSION['login_erro'] = 'Usuário ou senha inválidos';
-        header("Location: ../../public/index.html");
-        exit();
-        $conn->close();
+        return false;
     }
 
 }
