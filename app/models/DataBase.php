@@ -17,6 +17,21 @@ class DataBase{
             exit();
         }
     }
+
+    // Método para executar consultas SQL diretas
+    public function query($sql) {
+        return $this->conn->query($sql);
+    }
+
+    // Método para preparar consultas com parâmetros
+    public function prepare($sql) {
+        return $this->conn->prepare($sql);
+    }
+
+    // Método para fechar a conexão
+    public function close() {
+        $this->conn->close();
+    }
     
     
 

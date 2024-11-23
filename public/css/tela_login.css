@@ -1,0 +1,29 @@
+.container-login{
+    margin-top: 100px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-login form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container-login form input{
+    height: 2rem;
+    width: 100%;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+
+.container-links{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

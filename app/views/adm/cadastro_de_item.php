@@ -3,7 +3,7 @@ include '../../../public/header.php';
 ?>
 <div class="container mt-5">
         <h2>Cadastrar Produto</h2>
-        <form action="seu_script_de_processamento.php" method="POST" enctype="multipart/form-data">
+        <form action="../../controllers/controller_cardapio.php" method="POST" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="nome">Nome:</label>
                 <input type="text" class="form-control" id="nome" name="nome" required>
